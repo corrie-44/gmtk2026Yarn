@@ -250,7 +250,7 @@ title: Town_setup
 ---
 
 // FADE TO BLACK
-<<FadeOut>>
+
 You: Old Timey Town is coming up. 
 Clea: Oh yeah, that old place. 
 You: Did two whole summers there.
@@ -260,7 +260,7 @@ Clea: What? No way!
 You: Yeah, it's probably all spooky and abandoned now. Wanna check it out?
 Clea: Sure why not. Maybe we'll meet an old timey ghost.
 //LOAD TOWN LOCATION PREVIEW
-
+<<FadeOut>>
 // FADE IN
 <<set $car_scene_number += 1>>
 
@@ -365,14 +365,14 @@ title: Peach_setup
 ---
 
 // FADE TO BLACK
-<<FadeOut>>
+
 //LOAD TOWN LOCATION PREVIEW
 
 Clea: Wanna stop at Peach Palace, for old time's sake?
 You: Really? It won't dig up bad memories?
 Clea: Eh, it can't be worse than what seeing that giant peach guy will do to me.
 You: Haha fair enough.
-
+<<FadeOut>>
 // FADE IN
 <<set $car_scene_number += 1>>
 
