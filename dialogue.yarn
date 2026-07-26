@@ -340,23 +340,51 @@ You shiver a bit, despite yourself.
 ===
 title: Town_sundial_1
 ---
--> Prompt
+-> Consider the stone sundial.
+    You always liked that sundial. It felt sturdier than the rest of the town, a little more real. 
+    You: Remember this thing?  It's cool how long we've been using the sun and stars for knowing stuff.
+    Clea: Yeah, never really figured out how it's supposed to work, though.
+    You: What'd'you mean? It's literally just the sun!
+    <<jump Town_sundial_1>>
+-> Take Photo
+    <<jump TakePicture>>
 -> Leave
 ===
 title: Town_fiddle_2
 ---
--> Prompt
+-> Remember the fiddle.
+    Clea used to play the fiddle for the guests. 
+    It was not really her instrument.
+    You: Your guitar playing is really improving by the way.
+    Clea: Hey! is this about the fiddle! It's not my fault I didn't get adequate training!
+    She smiles. She hated that thing too.
+    <<jump Town_fiddle_2>>
+-> Take Photo
+    <<jump TakePicture>>
 -> Leave
 ===
 title: Town_dress_3
 ---
--> Prompt
+-> Remember the old timey dresses.
+    You: God those were itchy, weren't they?
+    Clea: Yeah, and hot. I don't know how we did it.
+    You: It was easier doing it together. 
+    <<jump Town_dress_3>>
+-> Take Photo
+    <<jump TakePicture>>
 // Codependence - Living out there together was tough. You mostly did seasonal and gig work, and Clea was at the hospital a lot
 -> Leave
 ===
 title: Town_foliage_4
 ---
--> Prompt
+-> Remember the poison ivy.
+    Clea: Please don't take a picture of that. 
+    You: What? You don't think it's funny in a comedy = tragedy + time kinda way?
+    Clea: I don't want to ever think about when we got poison ivy ever again. Worst two weeks of my LIFE.
+    You: Yeah that was definitely not worth minimum wage.
+    <<jump Town_foliage_4>>
+-> Take Photo
+    <<jump TakePicture>>
 // Contempt/ "Clea thinks I'm too silly" type of thing
 -> Leave
 ===
@@ -367,6 +395,9 @@ title: Town_churn_5
     Clea: Where- what?
     You: Aren't you on the butter churning side of the internet?
     Clea: Oh no! I'm really missing out!
+    <<jump Town_churn_5>>
+-> Take Photo
+    <<jump TakePicture>>
 -> Leave
 ===
 title: Car_Scene_3
