@@ -29,8 +29,7 @@
     // residential/ less dense area
     // a prominent looking park or bridge maybe?
 
-
-title: Start
+title: Setup
 ---
 // Track sentiments for dialogue
 <<declare $contempt= 0>>
@@ -47,10 +46,16 @@ title: Start
 
 //Car Scene Index
 <<declare $car_scene_number = 0>>
+===
 
+
+title: Start
+---
 <<if $car_scene_number == 0>>
     <<jump Car_Scene_0>>
-<<endif>>>>
+<<elseif $car_scene_number == 1>>
+    <<jump Car_Scene_1>>
+<<endif>>
 ===
 title: Car_Scene_0
 ---
@@ -217,7 +222,7 @@ title: MacDougal_tree_5
     <<endif>>
 -> Take Photo
     <<jump TakePicture>>
-    -> Leave
+-> Leave
 ===
 title: MacDougal_observatory_4_alt
 ---
