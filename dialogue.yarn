@@ -21,14 +21,6 @@
     // I think that argument was the only time I made Clea cry in public. I don't think I regret anything more than that. [take a picture of the pie stand]
     // A nice ceramic would obviously have been the better choice [take a picture of the peach-shaped serving dish in the window (or a mug, or a vase, or whatever)]
     // I always liked how clear the night skies could be this far from the city [take a picture of the setting sun]
-
-// The Big City
-// Context: You get stuck in dense traffic after your stop at Pioneer Village and you can see the big city you tried living in together, in the gap year before Clea was accepted into medical school. (I don't have specific dialogue options yet, but I would like 4 landmarks that you would be able to see from a distance)
-    // hospital Clea worked at (big H to signify hospital)
-    // Sky scrapers, maybe CN tower
-    // residential/ less dense area
-    // a prominent looking park or bridge maybe?
-
 title: Setup
 ---
 // Track sentiments for dialogue
@@ -130,7 +122,7 @@ You stop in at MacDougal University. If you're honest with yourself, it is kind 
 title: TakePicture
 ---
 <<TakePicture Player>>
-Is this the memory you want to keep?
+Is this the memory you want to keep? You can only keep one Polaroid from this location.
 -> Yes
     <<Keep Polaroid>>
 -> No
@@ -151,6 +143,7 @@ title: MacDougal_hotdog_1
     You wonder whether you and Clea would have had less arguments about where to eat on campus if this place had been an option when you were students.
     You were so intertwined back then, you had wanted to eat every meal together.
     You realize that not much has changed.
+    <<jump MacDougal_hotdog_1>>
 -> Take Photo
     <<jump TakePicture>>
 -> Leave
@@ -162,6 +155,7 @@ title: MacDougal_arch_2
     Clea: Just as romantic as I remember it
     Some part of you remembers that Clea didn't always think the arch was romantic.
     Now that you think about it, you're pretty sure she used to make fun of those people taking engagement photos under the arch.
+    <<jump MacDougal_arch_3>>
 -> Take Photo
     <<jump TakePicture>>
 -> Leave
@@ -248,76 +242,6 @@ title: Car_Scene_1
                                 INSERT TREE DIALOGUE
                                 <<set $fondness += 1>>
 <<endif>>
-<<jump City_setup>>
-===
-title: City_setup
----
-INSERT
-// FADE TO BLACK
-<<FadeOut>>
-//LOAD CITY LOCATION PREVIEW
-*
-<<FadeIn>>
-// FADE IN
-<<set $car_scene_number += 1>>
-
-
-You get caught in heavy traffic after leaving MacDougal. The car sits idle on the highway, with Toronto stretched out in front of you.
-You two don't live there anymore, but you find yourself daydreaming about the time you did.
-// ADD SCENE TRANSITION COMMAND - CITY
-<<SetLocation 1>>
-<<Transition 2>>
-===
-title: City_bridge_1
----
--> Prompt
--> Leave
-===
-title: City_skyscraper_2
----
--> Prompt
--> Leave
-===
-title: City_hospital_3
----
--> Prompt
-// Codependence - Living out there together was tough. You mostly did seasonal and gig work, and Clea was at the hospital a lot
--> Leave
-===
-title: City_carnival_4
----
--> Prompt
-// Contempt/ "Clea thinks I'm too silly" type of thing
--> Leave
-===
-title: City_scarecrow_5
----
--> Intimidate the scarecrow
-    You: You don't scare me!
-    Clea: Huh?
-    You: Nothing
-    As Clea turns her gaze back to the road, you stare down the scarecrow and draw a line across your neck.
-    This traffic jam better clear up fast, you're starting to lose it.
--> Leave
-===
-title: Car_Scene_2
----
-<<if $photo_City == 1>>
-    <<set $fondness += 1>>
-    INSERT bridge DIALOGUE
-    <<elseif $photo_City == 2>>
-        <<set $astronomy += 1>>
-        INSERT skyscraper DIALOGUE
-            <<elseif $photo_City == 3>>
-                <<set $codependence += 1>>
-                INSERT hospital DIALOGUE
-                    <<elseif $photo_City == 4>>
-                        <<set $contempt += 1>>
-                        INSERT carnival DIALOGUE
-                            <<elseif $photo_City == 5>>
-                                INSERT scarecrow DIALOGUE
-                                <<set $avoidant += 1>>
-<<endif>>
 <<jump Town_setup>>
 ===
 title: Town_setup
@@ -362,7 +286,7 @@ title: Town_foliage_4
 // Contempt/ "Clea thinks I'm too silly" type of thing
 -> Leave
 ===
-title: City_churn_5
+title: Town_churn_5
 ---
 -> Muse about innovations in butter churning
     You: Nowaways, people churn butter by sticking a bag of heavy cream in a fanny pack and running around... the future is truly here! 
@@ -371,23 +295,139 @@ title: City_churn_5
     Clea: Oh no! I'm really missing out!
 -> Leave
 ===
-title: Car_Scene_3
+title: Car_Scene_2
 ---
 <<if $photo_Town == 1>>
+    <<set $astronomy += 1>>
+    INSERT sundial DIALOGUE
+<<elseif $photo_Town == 2>>
+    <<set $contempt += 1>>
+    INSERT fiddle DIALOGUE
+<<elseif $photo_Town == 3>>
     <<set $fondness += 1>>
-    INSERT bridge DIALOGUE
-    <<elseif $photo_Town == 2>>
-        <<set $astronomy += 1>>
-        INSERT skyscraper DIALOGUE
-            <<elseif $photo_City == 3>>
-                <<set $codependence += 1>>
-                INSERT hospital DIALOGUE
-                    <<elseif $photo_City == 4>>
-                        <<set $contempt += 1>>
-                        INSERT carnival DIALOGUE
-                            <<elseif $photo_Town == 5>>
-                                INSERT butter DIALOGUE
-                                <<set $avoidant += 1>>
+    INSERT dress DIALOGUE
+<<elseif $photo_Town == 4>>
+    <<set $codependence += 1>>
+    INSERT foliage DIALOGUE
+<<elseif $photo_Town == 5>>
+    INSERT butter DIALOGUE
+<<set $avoidant += 1>>
 <<endif>>
-<<jump Town_setup>>
+<<jump Peach_setup>>
+===
+title: Peach_setup
+---
+INSERT
+// FADE TO BLACK
+<<FadeOut>>
+//LOAD TOWN LOCATION PREVIEW
+*
+<<FadeIn>>
+// FADE IN
+<<set $car_scene_number += 1>>
+
+
+The first time you went to Clea's family cottage, you had really wanted to bring something nice, so you stopped at the Peach Palace.
+You had been getting late, and you two just couldn't agree on what to get for some inane reason.
+When you finally settled on the last peach cobbler, you were so frustrated that you didn't notice the crack in the pavement.
+You went tumbling and so did the pie. 
+// ADD SCENE TRANSITION COMMAND - PEACH
+<<SetLocation 2>>
+<<Transition 2>>
+===
+title: Peach_woman_1
+---
+-> Notice the old woman
+-> Leave
+===
+title: Peach_ceramics_2
+---
+-> Peak in the window
+-> Leave
+===
+title: Peach_sky_3
+---
+-> Think about the sky
+-> Leave
+===
+title: Peach_pie_4
+---
+-> Look at the pies
+-> Leave
+===
+title: Peach_man_5
+---
+-> Comment on the Peach Man
+    You: Damn, he's creepy. 
+    Clea: Total nightmare.
+-> Leave
+===
+title: Car_Scene_3
+---
+<<if $photo_Peach == 1>>
+    <<set $fondness += 1>>
+    INSERT old woman DIALOGUE
+<<elseif $photo_Peach == 2>>
+    <<set $contempt += 1>>
+    INSERT ceramincs DIALOGUE
+<<elseif $photo_Peach == 3>>
+    <<set $astronomy += 1>>
+    INSERT sky DIALOGUE
+<<elseif $photo_Peach == 4>>
+    <<set $codependence += 1>>
+    INSERT pie DIALOGUE
+<<elseif $photo_Peach == 5>>
+    INSERT peach man DIALOGUE
+    <<set $avoidant += 1>>
+<<endif>>
+<<jump Breakup>>
+===
+title: Breakup
+---
+Clea: Is that everything?
+You: ...
+Clea: Jessie?
+<<if $avoidant< 1>>
+    You can see that she knows what's coming, but it doesn't make this any easier.
+<<elseif $avoidant > 2>>
+    If there's any part of you that doesn't want to move to Vancouver, any instinct telling you that this relationship is over, it's very quiet.
+    In fact, everything's pretty much great, isn't it?
+    If it isn't, you really can't recall.
+    You've just been on a goofy little road trip and everything is great!
+    Wahoo!
+    Some things aren't worth thinking about, you know?
+    <<jump Cottage_End>>
+<<else>>
+    Part of you really doesn't want to talk about this.
+-> Tell her you love her
+<< if $fondness > 1>>
+    You: I love you so much, Clea.
+    Tears start to well in Clea's eyes. In yours too. You're not really sure which one of you started crying first, actually.
+    Clea: I love you too.
+<<else>>
+You can't seem to get the words out.
+You know you loved her once.
+But it feels like a distant memory now.
+<<endif>>
+-> Try to end things
+<<if $contempt > 2>>
+    You: It's over for us.
+    Clea: Wait, what? Are you fucking serious?
+    Clea: You break up with me MOMENTS before we get to the cottage YOU insisted on going to, and all you have to say for yourself is "It's over for us?"
+    Clea: You're being an asshole right now.
+    You kind of feel like it's Clea who's being an asshole, or at least being unfair to you.
+    It's not like she's perfect.
+    <<if $photo_MacDougal==2>>
+        She was kind of a snob about people taking engagement photos under the MacDougall arch, even if she likes to pretend that she's always found it romantic.
+    <<endif>>
+    <<if $photo_Town==2>>
+        She's really not as good of a musician as she likes to think. Clea playing the fiddle? Awful.
+    <<endif>>
+    <<if $photo_Peach==2>>
+        You don't even want to think about how bad she is at gift-giving. Who would try to get the peach cobbler that's been sitting out all day when there are perfectly good ceramics to buy?
+    <<endif>>
+<<elseif $codependence >1>>
+    You: If I'm being honest, we haven't always been good for each other
+
+
 ===
