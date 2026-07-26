@@ -230,7 +230,7 @@ title: Car_Scene_1
 ---
 <<if $photo_MacDougal == 1>>
     <<set $codependence += 1>>
-    INSERT HOTDOG/ DIALOGUE
+    Clea: I'm still thinking about hotdog puns.
 <<elseif $photo_MacDougal == 2>>
     <<set $contempt += 1>>
     INSERT ARCH/CONTEMPT DIALOGUE
@@ -248,11 +248,19 @@ title: Car_Scene_1
 ===
 title: Town_setup
 ---
-INSERT
+
 // FADE TO BLACK
 <<FadeOut>>
+You: Old Timey Town is coming up. 
+Clea: Oh yeah, that old place. 
+You: Did two whole summers there.
+Clea: Whatever happened to that?
+You: It shut down a year ago.
+Clea: What? No way!
+You: Yeah, it's probably all spooky and abandoned now. Wanna check it out?
+Clea: Sure why not. Maybe we'll meet an old timey ghost.
 //LOAD TOWN LOCATION PREVIEW
-*
+
 // FADE IN
 <<set $car_scene_number += 1>>
 
@@ -355,12 +363,16 @@ title: Car_Scene_2
 ===
 title: Peach_setup
 ---
-INSERT
+
 // FADE TO BLACK
 <<FadeOut>>
 //LOAD TOWN LOCATION PREVIEW
-*
-<<FadeIn>>
+
+Clea: Wanna stop at Peach Palace, for old time's sake?
+You: Really? It won't dig up bad memories?
+Clea: Eh, it can't be worse than what seeing that giant peach guy will do to me.
+You: Haha fair enough.
+
 // FADE IN
 <<set $car_scene_number += 1>>
 
