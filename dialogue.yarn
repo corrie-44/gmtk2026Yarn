@@ -366,7 +366,7 @@ title: City_churn_5
     Clea: Oh no! I'm really missing out!
 -> Leave
 ===
-title: Car_Scene_2
+title: Car_Scene_3
 ---
 <<if $photo_Town == 1>>
     <<set $fondness += 1>>
