@@ -143,6 +143,8 @@ title: MacDougal_hotdog_1
     You: They had the perfect name right there!
     Name aside, it seems like a perfectly good hot dog cart.
     You wonder whether you and Clea would have had less arguments about where to eat on campus if this place had been an option when you were students.
+-> Take Photo
+    <<jump TakePicture>>
 -> Leave
 ===
 title: MacDougal_arch_2
@@ -165,6 +167,8 @@ title: MacDougal_statue_3
     Clea: What, Dougal MacDougal? Of course he isn't new.
     You: You're making that up
     Clea: Are you sure you actually went here?
+-> Take Photo
+    <<jump TakePicture>>
 -> Leave
 ===
 title: MacDougal_observatory_4
@@ -184,6 +188,8 @@ title: MacDougal_observatory_4
     <<else>>
         <<jump MacDougal_observatory_4_alt>> 
     <<endif>>
+-> Take Photo
+    <<jump TakePicture>>
 -> Leave
 ===
 title: MacDougal_tree_5
@@ -207,6 +213,8 @@ title: MacDougal_tree_5
             <<LookAt Player MacDougal_observatory_4>>
             <<jump MacDougal_observatory_4_alt>>
     <<endif>>
+-> Take Photo
+    <<jump TakePicture>>
 -> Leave
 ===
 title: MacDougal_observatory_4_alt
