@@ -105,9 +105,7 @@ You: Oh sure.
 
 // FADE TO BLACK
 <<FadeOut>>
- LOAD MACDOUGAL LOCATION PREVIEW
-<<FadeIn>>
-// FADE IN
+
 <<declare $MacDougal_tree_5_read= false>>
 <<declare $observatory_after_tree = false>>
 <<set $car_scene_number += 1>>
@@ -229,18 +227,18 @@ title: Car_Scene_1
 <<if $photo_MacDougal == 1>>
     <<set $codependence += 1>>
     INSERT HOTDOG/ DIALOGUE
-    <<elseif $photo_MacDougal == 2>>
-        <<set $contempt += 1>>
-        INSERT ARCH/CONTEMPT DIALOGUE
-            <<elseif $photo_MacDougal == 3>>
-                <<set $avoidant += 1>>
-                INSERT statue/silly DIALOGUE
-                    <<elseif $photo_MacDougal == 4>>
-                        <<set $astronomy += 1>>
-                        INSERT Observatory DIALOGUE
-                            <<elseif $photo_MacDougal == 5>>
-                                INSERT TREE DIALOGUE
-                                <<set $fondness += 1>>
+<<elseif $photo_MacDougal == 2>>
+    <<set $contempt += 1>>
+    INSERT ARCH/CONTEMPT DIALOGUE
+<<elseif $photo_MacDougal == 3>>
+    <<set $avoidant += 1>>
+    INSERT statue/silly DIALOGUE
+<<elseif $photo_MacDougal == 4>>
+    <<set $astronomy += 1>>
+    INSERT Observatory DIALOGUE
+<<elseif $photo_MacDougal == 5>>
+    INSERT TREE DIALOGUE
+    <<set $fondness += 1>>
 <<endif>>
 <<jump Town_setup>>
 ===
