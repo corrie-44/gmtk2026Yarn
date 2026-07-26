@@ -119,6 +119,17 @@ You stop in at MacDougal University. If you're honest with yourself, it is kind 
 <<SetLocation 0>>
 <<Transition 2>>
 ===
+
+title: TakePicture
+---
+<<TakePicture Player>>
+Is this the memory you want to keep?
+-> Yes
+    <<Keep Polaroid>>
+-> No
+    <<Discard Polaroid>>
+===
+
 title: MacDougal_hotdog_1
 ---
 -> Notice the hotdog cart.
@@ -140,6 +151,8 @@ title: MacDougal_arch_2
     Clea: Just as romantic as I remember it
     Some part of you remembers that Clea didn't always think the arch was romantic.
     Now that you think about it, you're pretty sure she used to make fun of those people taking engagement photos under the arch.
+-> Take Photo
+    <<jump TakePicture>>
 -> Leave
 ===
 title: MacDougal_statue_3
