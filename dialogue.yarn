@@ -47,6 +47,10 @@ title: Start
     <<jump Car_Scene_0>>
 <<elseif $car_scene_number == 1>>
     <<jump Car_Scene_1>>
+<<elseif $car_scene_number == 2>>
+    <<jump Car_Scene_2>>
+<<elseif $car_scene_number == 3>>
+    <<jump Car_Scene_3>>
 <<endif>>
 ===
 title: Car_Scene_0
@@ -153,7 +157,7 @@ title: MacDougal_arch_2
     Clea: Just as romantic as I remember it
     Some part of you remembers that Clea didn't always think the arch was romantic.
     Now that you think about it, you're pretty sure she used to make fun of those people taking engagement photos under the arch.
-    <<jump MacDougal_arch_3>>
+    <<jump MacDougal_arch_2>>
 -> Take Photo
     <<jump TakePicture>>
 -> Leave
@@ -249,7 +253,6 @@ INSERT
 <<FadeOut>>
 //LOAD TOWN LOCATION PREVIEW
 *
-<<FadeIn>>
 // FADE IN
 <<set $car_scene_number += 1>>
 
@@ -373,12 +376,12 @@ You went tumbling and so did the pie.
 title: Peach_woman_1
 ---
 -> Notice the old woman
-There's an old woman sitting out on the front porch.
-She looks a little like clea, with 40 or 50 years added. 
-She looks beautiful.
-You: Excuse me, miss! Would you be all right with having your picture taken?
-Old Woman: Oh, of course, young lady!
-<<jump  Peach_woman_1>>
+    There's an old woman sitting out on the front porch.
+    She looks a little like clea, with 40 or 50 years added. 
+    She looks beautiful.
+    You: Excuse me, miss! Would you be all right with having your picture taken?
+    Old Woman: Oh, of course, young lady!
+    <<jump  Peach_woman_1>>
 -> Take Photo
     <<jump TakePicture>>
 -> Leave
@@ -393,9 +396,10 @@ title: Peach_ceramics_2
 title: Peach_sky_3
 ---
 -> Think about the sky
-You: I always liked how clear the night skies can get this far from the city. 
-Clea: Yeah, stargazing is not a great city-girl hobby. 
-You: Don't I know it.
+    You: I always liked how clear the night skies can get this far from the city. 
+    Clea: Yeah, stargazing is not a great city-girl hobby. 
+    You: Don't I know it.
+    <<jump Peach_sky_3>>
 -> Take Photo
     <<jump TakePicture>>
 -> Leave
@@ -403,15 +407,16 @@ You: Don't I know it.
 title: Peach_pie_4
 ---
 -> Look at the pies
-You: We really got into it about those pies, didn't we?
-Clea: Yeah, I think it's the only time you've made me cry.
-You: And we didn't even get to eat the pie. 
-Clea: We didn't even get to eat the pie....
-You: I don't think I regret anything more than that.
-Clea: Not eating the pie!?
-You: No! They crying thing! Obviously!
-Clea: Oh no we're fighting again!
-You both laugh.
+    You: We really got into it about those pies, didn't we?
+    Clea: Yeah, I think it's the only time you've made me cry.
+    You: And we didn't even get to eat the pie. 
+    Clea: We didn't even get to eat the pie....
+    You: I don't think I regret anything more than that.
+    Clea: Not eating the pie!?
+    You: No! They crying thing! Obviously!
+    Clea: Oh no we're fighting again!
+    You both laugh.
+    <<jump Peach_pie_4>>
 -> Take Photo
     <<jump TakePicture>>
 -> Leave
