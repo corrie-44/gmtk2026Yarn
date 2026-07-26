@@ -377,18 +377,20 @@ title: Peach_woman_1
 ---
 -> Notice the old woman
     There's an old woman sitting out on the front porch.
-    She looks a little like clea, with 40 or 50 years added. 
+    She looks a little like Clea, with 40 or 50 years added. 
     She looks beautiful.
-    You: Excuse me, miss! Would you be all right with having your picture taken?
-    Old Woman: Oh, of course, young lady!
     <<jump  Peach_woman_1>>
 -> Take Photo
+    You: Excuse me, miss! Would you be all right with having your picture taken?
+    Old Woman: Oh, of course, young lady!
     <<jump TakePicture>>
 -> Leave
 ===
 title: Peach_ceramics_2
 ---
 -> Peak in the window
+    You see the same ceramic dish you thought about buying the last time you were here.
+    You remember
 -> Take Photo
     <<jump TakePicture>>
 -> Leave
@@ -413,7 +415,7 @@ title: Peach_pie_4
     Clea: We didn't even get to eat the pie....
     You: I don't think I regret anything more than that.
     Clea: Not eating the pie!?
-    You: No! They crying thing! Obviously!
+    You: No! The crying thing! Obviously!
     Clea: Oh no we're fighting again!
     You both laugh.
     <<jump Peach_pie_4>>
@@ -464,7 +466,8 @@ Clea: Jessie?
     You've just been on a goofy little road trip and everything is great!
     Wahoo!
     Some things aren't worth thinking about, you know?
-    <<jump Cottage_End>>
+    <<SetLocation 3>>
+    <<Transition 2>>
 <<else>>
     Part of you really doesn't want to talk about this. But you push forward.
 <<endif>>
@@ -563,4 +566,46 @@ You: Probably not such a great idea for me to come anymore, right?
 <<endif>>
 <<SetLocation 3>>
 <<Transition 2>>
+===
+
+title: End
+---
+<<if $avoidant > 2>>
+    <<jump Ending_Cottage>>
+<<else>>
+    <<jump Ending_Comet>>
+===
+
+title: Ending_Cottage
+---
+You head to the cottage with Clea's family.
+You catch her looking at you sometimes, as though something is off.
+As though she wants to talk to you about something.
+But you've worked hard to focus on the fun things.
+Why ruin a trip to the cottage?
+===
+title: Ending_Comet
+---
+<<if $astronomy >1>>
+    You drive back to MacDougal, and you're there just in time.
+    
+<<else>>
+    You drive a ways away from the cottages.
+    But then you keep driving.
+    You find yourself back at MacDougal, and you're there just in time for the meteor shower.
+<<endif>>
+It's a dark, quiet night. You imagine two kids under a tree falling in love.
+You wouldn't trade your time with Clea for anything.
+And as you walk up the stairs of the observatory, you start to believe that you wouldn't trade anything for this moment either.
+<<if $astronomy == 0>>
+    Maybe you'll go back and finish your degree. Maybe not.
+    Tonight you just want to enjoy the view.
+<<elseif $astronomy == 1>>
+    You think about going back and finishing your degree.
+    It feels daunting.
+<<elseif $astronomy >1 >>
+    You think about going back and finishing your degree.
+    That feels like a real possibility for the first time in a long time.
+<<endif>>
+You look up at the night sky and watch the meteors soar by.
 ===
