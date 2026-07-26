@@ -1,26 +1,3 @@
-// McMaster, Hamilton (you met at University)
-// Context: You remember that you stayed out on your date under that tree and never mentioned to Clea that you had class in the observatory. You were looking forward to watching the meteor shower just wanted to keep spending time with her.
-    // That was a pretty amazing date, wasn't it? [take a picture of the tree]
-    // I wonder what the shower would have looked like from the observatory. [Take a picture of the observatory]
-    // Now that I think about it, Clea used to make fun of those people taking engagement photos under that arch! [take a photo of the arch]
-    // That's new! I wonder if we would have had less arguments about where to eat with that option around [take a photo of the hotdog stand]
-    // wow that sculpture is pretty weird, was that always there? [take a pic of the sculpture]
-
-// Pioneer Village
-// Context: You didn't realize it, but this place is closed down now, though you two worked here for a while when Clea was in medical school. It's downright spooky
-    // Good thing Clea switched to guitar. The fiddle was not her instrument [take a picture of the band stand with a broken fiddle]
-    // Yikes, I forgot about that time we got poison ivy. Not worth the minimum wage. [take a picture of the foliage]
-    // Now people churn butter by sticking a bag of heavy cream in a fanny pack and running around... the future is truly here! [take a picture of the old-timey butter churn]
-    // There's really no one I would rather wear an itchy pioneer dress with in the August sun [take a picture of the fallen clothes line with pioneer dresses on it]
-    // It's cool that the sun and stars have been playing such an important role in human lives for so long [take a picture of the sundial]
-
-// The Peach Palace (knock-off Apple Factory)
-//Context: The first time you went to Clea's family's cottage, you had really wanted to bring something nice, so you stopped to get a pie. You had been getting late, and you two just couldn't agree on what pie to get. When you finally settled on the last peach cobbler, you were so frustrated that you didn't notice the crack in the pavement. You went tumbling and so did the pie. 
-    // Damn, he creepy [take a picture of the apple man]
-    // She's so beautiful. I can't help but feel like that's what Clea will look like in 50 years [Ask the woman if you can take her picture]
-    // I think that argument was the only time I made Clea cry in public. I don't think I regret anything more than that. [take a picture of the pie stand]
-    // A nice ceramic would obviously have been the better choice [take a picture of the peach-shaped serving dish in the window (or a mug, or a vase, or whatever)]
-    // I always liked how clear the night skies could be this far from the city [take a picture of the setting sun]
 title: Setup
 ---
 // Track sentiments for dialogue
@@ -32,7 +9,6 @@ title: Setup
 
 // Which photos were taken where
 <<declare $photo_MacDougal = 0>> // 1 through 5
-<<declare $photo_City = 0>>
 <<declare $photo_Town = 0>>
 <<declare $photo_Peach = 0>>
 
@@ -206,8 +182,7 @@ title: MacDougal_tree_5
     You: Yeah. Talking to you was like... the easiest thing I have ever done in my life
     Clea: Exactly. We probably could have talked all night. Why didn't we?
     You: Bugs.
-    Clea nods sagely
-    Clea: Bugs.
+    Clea: (nodding sagely) Bugs.
     You: But I'm glad we stayed out long enough to catch the meteor shower.
     Clea: Oh my god, I can't believe I forgot about that! It was beautiful.
     It WAS beautiful. Clea was beautiful too.
@@ -228,21 +203,49 @@ In this moment, you realize how much it still matters to you that you missed out
 ===
 title: Car_Scene_1
 ---
+Clea: Well that was interesting
 <<if $photo_MacDougal == 1>>
     <<set $codependence += 1>>
-    Clea: I'm still thinking about hotdog puns.
+    You: Yeah, I had kind of forgotten about how much we used to argue about where to eat.
+    Clea: Oh god, we were a couple of stupid lovesick kids, weren't we?
+    You: Hot dogs would have solved all our problems.
+    Clea: Obviously.
 <<elseif $photo_MacDougal == 2>>
     <<set $contempt += 1>>
-    INSERT ARCH/CONTEMPT DIALOGUE
-<<elseif $photo_MacDougal == 3>>
-    <<set $avoidant += 1>>
-    INSERT statue/silly DIALOGUE
+    You don't say anything to Clea, but you're feeling weirder about visiting MacDougal thank you had expected.
+    It's just weird to remember how mean-spirited she used to be about people taking engagement photos under the arch.
 <<elseif $photo_MacDougal == 4>>
     <<set $astronomy += 1>>
-    INSERT Observatory DIALOGUE
 <<elseif $photo_MacDougal == 5>>
-    INSERT TREE DIALOGUE
+    Clea: You were so sappy about the tree.
+    You: What? YOU were the one being sappy.
+    You: Sappier than the tree itself.
+    Clea: oh my GOD
+    Clea: ...
     <<set $fondness += 1>>
+<<endif>>
+
+Clea: By the way...
+You feel your shoulders tighten. This feels like an Important Conversation.
+Clea: I know you already said it's fine, but I wanted to apologize for fighting you on this trip.
+Clea: I'm honestly just stressed about starting my internship.
+<<if $photo_MacDougal == 1>>
+    You: That's ok. I'm here for you no matter what. I don't mind focusing on your career right now.
+    Clea: I don't know that you should have to.
+    You: But I WANT to.
+    Clea: Yeah, I know. I love you.
+    You: I love you too.
+<<elseif $photo_MacDougal == 2>>
+    You: Yeah whatever.
+<<elseif $photo_MacDougal == 3>>
+    You: No big deal! Let's just have a fun trip, yeah?
+    You: Focus! On! Fun!
+<<elseif $photo_MacDougal == 4>>
+    You nod. It makes sense that Clea cares so much about her career.
+    You're not sure when you stopped caring about yours.
+<<elseif $photo_MacDougal == 5>>
+    You: Hey, I love you. It's gonna be ok.
+    You: We just gotta remember the good times, and we'll get through your internship just fine.
 <<endif>>
 <<jump Town_setup>>
 ===
@@ -389,8 +392,8 @@ title: Peach_woman_1
 ---
 -> Notice the old woman
     There's an old woman sitting out on the front porch.
-    She looks a little like Clea, with 40 or 50 years added. 
-    She looks beautiful.
+    She looks a little like Clea, with 40 or 50 years added.
+    She's so beautiful.
     <<jump  Peach_woman_1>>
 -> Take Photo
     You: Excuse me, miss! Would you be all right with having your picture taken?
@@ -402,7 +405,9 @@ title: Peach_ceramics_2
 ---
 -> Peak in the window
     You see the same ceramic dish you thought about buying the last time you were here.
-    You remember
+    You remember how insistent Clea was about buying a pie instead.
+    Which was a ridiculous idea, obviously.
+    Her mom was gluten free at the time, it would have made no sense!
 -> Take Photo
     <<jump TakePicture>>
 -> Leave
@@ -421,15 +426,9 @@ title: Peach_sky_3
 title: Peach_pie_4
 ---
 -> Look at the pies
-    You: We really got into it about those pies, didn't we?
-    Clea: Yeah, I think it's the only time you've made me cry.
-    You: And we didn't even get to eat the pie. 
-    Clea: We didn't even get to eat the pie....
-    You: I don't think I regret anything more than that.
-    Clea: Not eating the pie!?
-    You: No! The crying thing! Obviously!
-    Clea: Oh no we're fighting again!
-    You both laugh.
+    It's hard not to think about the last time you tried to buy one of those pies.
+    Or a peach cobbler. Whatever.
+    It was the first time you made Clea cry in public.
     <<jump Peach_pie_4>>
 -> Take Photo
     <<jump TakePicture>>
@@ -448,7 +447,13 @@ title: Car_Scene_3
 ---
 <<if $photo_Peach == 1>>
     <<set $fondness += 1>>
-    INSERT old woman DIALOGUE
+    Clea: that was sweet of you, taking that woman's picture
+    You: She reminded me so much of you
+    Clea: Oh wow, thanks. I'll wear more sunscreen I guess
+    You: No! I mean you might look like her one day.
+    You: Don't you think about what I'll look like in the future?
+    Clea: I think about what we'll look like together.
+    You smile.
 <<elseif $photo_Peach == 2>>
     <<set $contempt += 1>>
     INSERT ceramincs DIALOGUE
