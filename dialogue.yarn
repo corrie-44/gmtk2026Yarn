@@ -306,7 +306,12 @@ title: Town_foliage_4
     Clea: Please don't take a picture of that. 
     You: What? You don't think it's funny in a comedy = tragedy + time kinda way?
     Clea: I don't want to ever think about when we got poison ivy ever again. Worst two weeks of my LIFE.
-    You: Yeah that was definitely not worth minimum wage.
+    You: Can't argue with that
+    You try to make light of the situation, but the poison ivy debacle does get to you sometimes.
+    You remember Clea going off the path and brushing up against some poison ivy, but when you tried to tell her, she had started panicking and making things even worse.
+    You wanted to stop her from getting even more on herself, but the only thing you could think to do was run in and grab her.
+    Would it really have been so hard to help her without getting yourself covered too?
+    You're probably overthinking things.
     <<jump Town_foliage_4>>
 -> Take Photo
     <<jump TakePicture>>
@@ -428,7 +433,8 @@ Clea: Jessie?
     Some things aren't worth thinking about, you know?
     <<jump Cottage_End>>
 <<else>>
-    Part of you really doesn't want to talk about this.
+    Part of you really doesn't want to talk about this. But you push forward.
+<<endif>>
 -> Tell her you love her
 << if $fondness > 1>>
     You: I love you so much, Clea.
@@ -460,10 +466,26 @@ But it feels like a distant memory now.
     You: Despite our best efforts, we aren't always good for each other.
     <<if $photo_MacDougal == 1>>
         You think about the hotdog cart, and how you and Clea were so attached yet so conflict-prone at MacDougal.
-        You: We fight about silly stuff, like where to eat. Yet we can't seem to handle time apart.
+        You: We fight about the silliest stuff, like where to eat. Yet we can't seem to handle time apart.
+    <<endif>>
     <<if $photo_Town == 4>>
-        You remember the stupid poison ivy debacle. You know it wasn't the only time you 
-        You: We can't help but get stuck in each other's messes. You deserve to be with someone who gets you
-
-
+        You remember the stupid poison ivy debacle. You know it wasn't the only time you made things worse for each other.
+        Sometimes, you love someone so much that it makes you do stupid things.
+        You: We can't help but get stuck in each other's messes.
+    <<endif>>
+    <<if $photo_Peach ==4>>
+        You can't get the fight at the Peach Palace out of your head.
+        You: I hate that I made you cry at the Peach Palace of all places. I can be so mean to you sometimes.
+        Clea: (Shaking her head) I'm not trying to absolve you, but I don't think it's normal to cry over a simple disagreement like that.
+        Clea: I couldn't handle the fact that you disagreed with me. I don't know...
+        Clea: I think I care too much about what you think, sometimes. Maybe if I cared a little less, I wouldn't have cried.
+        You: I don't know that that's fair.
+    <<endif>>
+    You: And I have to believe that it's possible to love someone without getting too enmeshed. But I don't think we've ever figured that out.
+<<elseif $fondness >1>>
+    You: It's not that I don't love you. We have so many wonderful memories.
+    You: I don't think I realized that I could love you this much and let you go.
+    You: I want so much for you, and I just don't think I can be a part of it.
+<<endif>>
+Clea: You talk like
 ===
