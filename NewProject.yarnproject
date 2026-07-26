@@ -11,5 +11,19 @@
     "baseLanguage": "en",
     "compilerOptions": {
         "diagnosticsSeverity": {}
+    },
+    "editorOptions": {
+        "yarnScriptEditor": {
+            "characters": [
+                {
+                    "name": "Clea",
+                    "colour": "#d74798"
+                },
+                {
+                    "name": "You",
+                    "colour": "#3da464"
+                }
+            ]
+        }
     }
 }

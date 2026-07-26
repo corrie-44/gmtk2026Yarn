@@ -32,9 +32,11 @@
 
 title: Start
 ---
+// Track sentiments for dialogue
 <<declare $contempt= 0>>
 <<declare $fondness= 0>>
-<<declare $bad_memories= 0>>
+<<declare $codependence= 0>>
+<<declare $astronomy = 0>>
 <<declare $avoidant= 0>>
 
 // Which photos were taken where
@@ -57,7 +59,6 @@ title: Car_Scene_0
 // JOSH - Maybe some folly of moving a bag into a car?
 Clea: Is that everything?
 You: Yeah
-Corrie: test change
 
 You start the car.
 // JOSH - associated sounds
@@ -89,7 +90,7 @@ You: Absolutely. We crave Toronto smog. And pestilence.
 //FADE TO BLACK
 //FADE IN
 <<FadeOut>>
-You pass a road sign that says X km to MacDougal University
+You pass a road sign that says 10 km to MacDougal University
 <<FadeIn>>
 You: Oh shit, I didn't realize we'd be so close to MacDougal
 Clea: Ooh, how romantic.
@@ -110,8 +111,8 @@ You: Oh sure.
  LOAD MACDOUGAL LOCATION PREVIEW
 <<FadeIn>>
 // FADE IN
-<<declare $Car_MacDougal_Conversation = 0>>
 <<declare $MacDougal_tree_5_read= false>>
+<<declare $observatory_after_tree = false>>
 <<set $car_scene_number += 1>>
 
 
@@ -143,6 +144,8 @@ title: MacDougal_hotdog_1
     You: They had the perfect name right there!
     Name aside, it seems like a perfectly good hot dog cart.
     You wonder whether you and Clea would have had less arguments about where to eat on campus if this place had been an option when you were students.
+    You were so intertwined back then, you had wanted to eat every meal together.
+    You realize that not much has changed.
 -> Take Photo
     <<jump TakePicture>>
 -> Leave
@@ -173,7 +176,6 @@ title: MacDougal_statue_3
 ===
 title: MacDougal_observatory_4
 ---
-<<declare $observatory_after_tree = false>>
 -> Remember that time you skipped class at the observatory
     <<if $MacDougal_tree_5_read == false>>
         You're staring at the observatory when Clea points out the tree from your first date
@@ -190,7 +192,7 @@ title: MacDougal_observatory_4
     <<endif>>
 -> Take Photo
     <<jump TakePicture>>
--> Leave
+    -> Leave
 ===
 title: MacDougal_tree_5
 ---
@@ -215,7 +217,7 @@ title: MacDougal_tree_5
     <<endif>>
 -> Take Photo
     <<jump TakePicture>>
--> Leave
+    -> Leave
 ===
 title: MacDougal_observatory_4_alt
 ---
@@ -223,9 +225,163 @@ You never told Clea that you were supposed to watch the meteor shower from the o
 It hadn't seemed to matter. In that moment, you felt like you belonged under that tree with her.
 In this moment, you realize how much it still matters to you that you missed out on the observatory.
 ===
-//title: Car_Scene_1
-//---
-//<<if $photo_MacDougal == 1>>
-   //INSERT DIALOGUE HOTDOG/BAD MEMORIES DIALOGUE
-    //<<if>> $photo_>>
-//===
+title: Car_Scene_1
+---
+<<if $photo_MacDougal == 1>>
+    <<set $codependence += 1>>
+    INSERT HOTDOG/ DIALOGUE
+    <<elseif $photo_MacDougal == 2>>
+        <<set $contempt += 1>>
+        INSERT ARCH/CONTEMPT DIALOGUE
+            <<elseif $photo_MacDougal == 3>>
+                <<set $avoidant += 1>>
+                INSERT statue/silly DIALOGUE
+                    <<elseif $photo_MacDougal == 4>>
+                        <<set $astronomy += 1>>
+                        INSERT Observatory DIALOGUE
+                            <<elseif $photo_MacDougal == 5>>
+                                INSERT TREE DIALOGUE
+                                <<set $fondness += 1>>
+<<endif>>
+<<jump City_setup>>
+===
+title: City_setup
+---
+INSERT
+// FADE TO BLACK
+<<FadeOut>>
+//LOAD CITY LOCATION PREVIEW
+*
+<<FadeIn>>
+// FADE IN
+<<set $car_scene_number += 1>>
+
+
+You get caught in heavy traffic after leaving MacDougal. The car sits idle on the highway, with Toronto stretched out in front of you.
+You two don't live there anymore, but you find yourself daydreaming about the time you did.
+// ADD SCENE TRANSITION COMMAND - CITY
+<<SetLocation 1>>
+<<Transition 2>>
+===
+title: City_bridge_1
+---
+-> Prompt
+-> Leave
+===
+title: City_skyscraper_2
+---
+-> Prompt
+-> Leave
+===
+title: City_hospital_3
+---
+-> Prompt
+// Codependence - Living out there together was tough. You mostly did seasonal and gig work, and Clea was at the hospital a lot
+-> Leave
+===
+title: City_carnival_4
+---
+-> Prompt
+// Contempt/ "Clea thinks I'm too silly" type of thing
+-> Leave
+===
+title: City_scarecrow_5
+---
+-> Intimidate the scarecrow
+    You: You don't scare me!
+    Clea: Huh?
+    You: Nothing
+    As Clea turns her gaze back to the road, you stare down the scarecrow and draw a line across your neck.
+    This traffic jam better clear up fast, you're starting to lose it.
+-> Leave
+===
+title: Car_Scene_2
+---
+<<if $photo_City == 1>>
+    <<set $fondness += 1>>
+    INSERT bridge DIALOGUE
+    <<elseif $photo_City == 2>>
+        <<set $astronomy += 1>>
+        INSERT skyscraper DIALOGUE
+            <<elseif $photo_City == 3>>
+                <<set $codependence += 1>>
+                INSERT hospital DIALOGUE
+                    <<elseif $photo_City == 4>>
+                        <<set $contempt += 1>>
+                        INSERT carnival DIALOGUE
+                            <<elseif $photo_City == 5>>
+                                INSERT scarecrow DIALOGUE
+                                <<set $avoidant += 1>>
+<<endif>>
+<<jump Town_setup>>
+===
+title: Town_setup
+---
+INSERT
+// FADE TO BLACK
+<<FadeOut>>
+//LOAD TOWN LOCATION PREVIEW
+*
+<<FadeIn>>
+// FADE IN
+<<set $car_scene_number += 1>>
+
+
+This place hadn't felt like a real pioneering town when you worked here.
+Your amateur acting certainly hadn't helped sell the authenticity.
+Now, standing before the rotting beams of abandoned buildings, the town feels more real as a ghost of itself.
+You shiver a bit, despite yourself.
+// ADD SCENE TRANSITION COMMAND - TOWN
+<<SetLocation 1>>
+<<Transition 2>>
+===
+title: Town_sundial_1
+---
+-> Prompt
+-> Leave
+===
+title: Town_fiddle_2
+---
+-> Prompt
+-> Leave
+===
+title: Town_dress_3
+---
+-> Prompt
+// Codependence - Living out there together was tough. You mostly did seasonal and gig work, and Clea was at the hospital a lot
+-> Leave
+===
+title: Town_foliage_4
+---
+-> Prompt
+// Contempt/ "Clea thinks I'm too silly" type of thing
+-> Leave
+===
+title: City_churn_5
+---
+-> Muse about innovations in butter churning
+    You: Nowaways, people churn butter by sticking a bag of heavy cream in a fanny pack and running around... the future is truly here! 
+    Clea: Where- what?
+    You: Aren't you on the butter churning side of the internet?
+    Clea: Oh no! I'm really missing out!
+-> Leave
+===
+title: Car_Scene_2
+---
+<<if $photo_Town == 1>>
+    <<set $fondness += 1>>
+    INSERT bridge DIALOGUE
+    <<elseif $photo_Town == 2>>
+        <<set $astronomy += 1>>
+        INSERT skyscraper DIALOGUE
+            <<elseif $photo_City == 3>>
+                <<set $codependence += 1>>
+                INSERT hospital DIALOGUE
+                    <<elseif $photo_City == 4>>
+                        <<set $contempt += 1>>
+                        INSERT carnival DIALOGUE
+                            <<elseif $photo_Town == 5>>
+                                INSERT butter DIALOGUE
+                                <<set $avoidant += 1>>
+<<endif>>
+<<jump Town_setup>>
