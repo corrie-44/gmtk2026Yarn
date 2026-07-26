@@ -277,11 +277,11 @@ title: Town_sundial_1
 title: Town_fiddle_2
 ---
 -> Remember the fiddle.
-    Clea used to play the fiddle for the guests. 
-    It was not really her instrument.
-    You: Your guitar playing is really improving by the way.
-    Clea: Hey! is this about the fiddle! It's not my fault I didn't get adequate training!
-    She smiles. She hated that thing too.
+    Clea tried to play that fiddle once when she visited me. It was ROUGH.
+    You: Really wasn't your instrument, huh?
+    Clea: Don't remind me...
+    You: But hey, your guitar's improving!
+    Clea: Thanks...
     <<jump Town_fiddle_2>>
 -> Take Photo
     <<jump TakePicture>>
@@ -290,9 +290,10 @@ title: Town_fiddle_2
 title: Town_dress_3
 ---
 -> Remember the old timey dresses.
-    You: God those were itchy, weren't they?
-    Clea: Yeah, and hot. I don't know how we did it.
-    You: It was easier doing it together. 
+    You: God those were itchy.
+    Clea: But you looked so cute in them! And you really got into character! 
+    You: It was a lot easier to ignore whenever you came to visit.
+    Clea was at the hospital a lot while you did gig work. You didn't see each other a lot, but when you did it was great. 
     <<jump Town_dress_3>>
 -> Take Photo
     <<jump TakePicture>>
