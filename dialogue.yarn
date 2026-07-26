@@ -425,7 +425,13 @@ But it feels like a distant memory now.
         You don't even want to think about how bad she is at gift-giving. Who would try to get the peach cobbler that's been sitting out all day when there are perfectly good ceramics to buy?
     <<endif>>
 <<elseif $codependence >1>>
-    You: If I'm being honest, we haven't always been good for each other
+    You: Despite our best efforts, we aren't always good for each other.
+    <<if $photo_MacDougal == 1>>
+        You think about the hotdog cart, and how you and Clea were so attached yet so conflict-prone at MacDougal.
+        You: We fight about silly stuff, like where to eat. Yet we can't seem to handle time apart.
+    <<if $photo_Town == 4>>
+        You remember the stupid poison ivy debacle. You know it wasn't the only time you 
+        You: We can't help but get stuck in each other's messes. You deserve to be with someone who gets you
 
 
 ===
