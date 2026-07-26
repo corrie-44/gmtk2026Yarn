@@ -289,7 +289,7 @@ title: Town_fiddle_2
 ===
 title: Town_dress_3
 ---
--> Remember the old timey dresses.
+-> Remember the old-timey dresses.
     You: God those were itchy.
     Clea: But you looked so cute in them! And you really got into character! 
     You: It was a lot easier to ignore whenever you came to visit.
@@ -512,8 +512,50 @@ But it feels like a distant memory now.
     You: And I have to believe that it's possible to love someone without getting too enmeshed. But I don't think we've ever figured that out.
 <<elseif $fondness >1>>
     You: It's not that I don't love you. We have so many wonderful memories.
+    <<if $photo_MacDougal == 5>>
+    You remember your incredible first date.
+    You: I could talk to you forever.
+    <<endif>>
+    <<if $photo_Town == 3>>
+    You remember trying to make Clea smile with your performances at Old Timey Town
+    You: I've always loved making you laugh
+    <<endif>>
+    <<if $photo_Peach == 1>>
+    You think about Clea growing old without you, and you can't breathe.
+    You want that woman to be so happy.
+    You just don't think you can be the person who makes her happy anymore.
+    <<endif>>
     You: I don't think I realized that I could love you this much and let you go.
     You: I want so much for you, and I just don't think I can be a part of it.
+    Clea: I want the world for you too. I love you so so much.
 <<endif>>
-Clea: You talk like
+Clea: So this is it? We're really breaking up?
+You: I'm sorry.
+Clea: I'm sorry too.
+You: ...
+Clea: ...
+Clea: So the cottage...
+You: Probably not such a great idea for me to come anymore, right?
+<<if $contempt>2 >>
+    Clea: No, I don't think it is.
+<<else>>
+    Clea: I mean you're still welcome, if it's what you want.
+<<endif>>
+<<if $astronomy >1>>
+    <<if $photo_MacDougal == 4>>
+        You think about the observatory again. You think about the meteor shower happening tonight
+    <<endif>>
+    <<if $photo_Town == 1>>
+        You think about the sun dial, and you realize that you've never stopped thinking about the stars.
+    <<endif>>
+    <<if $photo_Peach == 3>>
+        You think about how clear the sky can be out here. What better night to be here than during a meteor shower.
+    <<endif>>
+    You: I was thinking I might take the car and find a place to watch the meteor shower. If you're ok with that.
+    Clea: Yeah, you can have the car.
+<<else>>
+    You: I don't know. I think I'll have to figure something else out.
+<<endif>>
+<<SetLocation 3>>
+<<Transition 2>>
 ===
