@@ -1,0 +1,209 @@
+// McMaster, Hamilton (you met at University)
+// Context: You remember that you stayed out on your date under that tree and never mentioned to Clea that you had class in the observatory. You were looking forward to watching the meteor shower just wanted to keep spending time with her.
+    // That was a pretty amazing date, wasn't it? [take a picture of the tree]
+    // I wonder what the shower would have looked like from the observatory. [Take a picture of the observatory]
+    // Now that I think about it, Clea used to make fun of those people taking engagement photos under that arch! [take a photo of the arch]
+    // That's new! I wonder if we would have had less arguments about where to eat with that option around [take a photo of the hotdog stand]
+    // wow that sculpture is pretty weird, was that always there? [take a pic of the sculpture]
+
+// Pioneer Village
+// Context: You didn't realize it, but this place is closed down now, though you two worked here for a while when Clea was in medical school. It's downright spooky
+    // Good thing Clea switched to guitar. The fiddle was not her instrument [take a picture of the band stand with a broken fiddle]
+    // Yikes, I forgot about that time we got poison ivy. Not worth the minimum wage. [take a picture of the foliage]
+    // Now people churn butter by sticking a bag of heavy cream in a fanny pack and running around... the future is truly here! [take a picture of the old-timey butter churn]
+    // There's really no one I would rather wear an itchy pioneer dress with in the August sun [take a picture of the fallen clothes line with pioneer dresses on it]
+    // It's cool that the sun and stars have been playing such an important role in human lives for so long [take a picture of the sundial]
+
+// The Peach Palace (knock-off Apple Factory)
+//Context: The first time you went to Clea's family's cottage, you had really wanted to bring something nice, so you stopped to get a pie. You had been getting late, and you two just couldn't agree on what pie to get. When you finally settled on the last peach cobbler, you were so frustrated that you didn't notice the crack in the pavement. You went tumbling and so did the pie. 
+    // Damn, he creepy [take a picture of the apple man]
+    // She's so beautiful. I can't help but feel like that's what Clea will look like in 50 years [Ask the woman if you can take her picture]
+    // I think that argument was the only time I made Clea cry in public. I don't think I regret anything more than that. [take a picture of the pie stand]
+    // A nice ceramic would obviously have been the better choice [take a picture of the peach-shaped serving dish in the window (or a mug, or a vase, or whatever)]
+    // I always liked how clear the night skies could be this far from the city [take a picture of the setting sun]
+
+// The Big City
+// Context: You get stuck in dense traffic after your stop at Pioneer Village and you can see the big city you tried living in together, in the gap year before Clea was accepted into medical school. (I don't have specific dialogue options yet, but I would like 4 landmarks that you would be able to see from a distance)
+    // hospital Clea worked at (big H to signify hospital)
+    // Sky scrapers, maybe CN tower
+    // residential/ less dense area
+    // a prominent looking park or bridge maybe?
+
+
+title: Start
+---
+<<declare $contempt= 0>>
+<<declare $fondness= 0>>
+<<declare $bad_memories= 0>>
+<<declare $avoidant= 0>>
+
+// Which photos were taken where
+<<declare $photo_MacDougal = 0>> // 1 through 5
+<<declare $photo_City = 0>>
+<<declare $photo_Town = 0>>
+<<declare $photo_Peach = 0>>
+
+//Car Scene Index
+<<declare $car_scene_number = 0>>
+
+<<if $car_scene_number == 0>>
+    <<jump Car_Scene_0>>
+<<endif>>>>
+===
+title: Car_Scene_0
+---
+// BLACK SCREEN
+
+// JOSH - Maybe some folly of moving a bag into a car?
+Clea: Is that everything?
+You: Yeah
+
+You start the car.
+// JOSH - associated sounds
+
+You: Wait!
+
+You shuffle through your bag, and sigh in relief when you find it.
+// JOSH - associated sounds
+
+You: Just wanted to make sure I had my camera
+<<FadeIn>>
+// JOSH - You hear the car take off. Lo-Fi music starts
+// TITLE CARD: "3.5 HOURS TO THE COTTAGE"
+Clea: ...
+You: ...
+Clea: Hey, I wanted to apologize for- 
+You: It's okay. I'm just glad we could make this trip happen.
+Clea: Me too. I know it's important to you. 
+You: Yeah. After this, it might get harder to visit your parents' cottage for a while, you know?
+Clea: (Laughs) We're moving to Vancouver, not Antarctica.
+You: No, I know! But that's still across the country, and you'll be busy with your internship.
+You: I'm just saying, you might- We might not be able to fly home every year.
+Clea: Yeah you're probably right...
+Clea: Vancouver should be pretty fun though.
+You: Bah! Only if you like FRESH AIR and MOUNTAINS and... PROVIDING HEALTHCARE!
+Clea: Which we... hate?
+You: Absolutely. We crave Toronto smog. And pestilence.
+
+//FADE TO BLACK
+//FADE IN
+<<FadeOut>>
+You pass a road sign that says X km to MacDougal University
+<<FadeIn>>
+You: Oh shit, I didn't realize we'd be so close to MacDougal
+Clea: Ooh, how romantic.
+Clea: I'm joking, obviously. Kinda. People literally take engagement photos there.
+You: That's true, people love taking photos under that one arch.
+Clea: It's a romantic arch.
+You: I mean it's a teeny bit traumatic. University, not the arch. At least it was for those of us who weren't amazing at school.
+You: Traumatic... but also romantic.
+You think about it for a second.
+You: Actually, do you wanna walk around campus for a bit?
+Clea: You know what, why not? We've got time.
+You: Nice! I really sold you with "traumatic but romantic," didn't I?
+Clea: And I have to pee.
+You: Oh sure.
+
+// FADE TO BLACK
+<<FadeOut>>
+ LOAD MACDOUGAL LOCATION PREVIEW
+<<FadeIn>>
+// FADE IN
+<<declare $Car_MacDougal_Conversation = 0>>
+<<declare $MacDougal_tree_5_read= false>>
+<<set $car_scene_number += 1>>
+
+
+You stop in at MacDougal University. If you're honest with yourself, it is kind of romantic. It's where you two met, after all.
+// ADD SCENE TRANSITION COMMAND - MACDOUGAL
+<<SetLocation 0>>
+<<Transition 2>>
+===
+title: MacDougal_hotdog_1
+---
+-> Notice the hotdog cart.
+    You: Wait, is that new?
+    Clea: MacDougal Dogs? I think so
+    You: MacDougal Dogs? You've gotta be kidding me
+    Clea: You have a better idea?
+    You: Yeah, Mac-DOG-als!
+    Clea: Oh my god
+    You: They had the perfect name right there!
+    Name aside, it seems like a perfectly good hot dog cart.
+    You wonder whether you and Clea would have had less arguments about where to eat on campus if this place had been an option when you were students.
+-> Leave
+===
+title: MacDougal_arch_2
+---
+-> Point out the famous arch.
+    You: There she is, in her splendor
+    Clea: Just as romantic as I remember it
+    Some part of you remembers that Clea didn't always think the arch was romantic.
+    Now that you think about it, you're pretty sure she used to make fun of those people taking engagement photos under the arch.
+-> Leave
+===
+title: MacDougal_statue_3
+---
+-> Admire the weird statue
+    You: Now that's how you ride a horse. What a legend.
+    Clea: I think some engineers tried to get up there to take a grad photo on the horse once
+    You: Wait, you're telling me that statue isn't new?
+    Clea: What, Dougal MacDougal? Of course he isn't new.
+    You: You're making that up
+    Clea: Are you sure you actually went here?
+-> Leave
+===
+title: MacDougal_observatory_4
+---
+<<declare $observatory_after_tree = false>>
+-> Remember that time you skipped class at the observatory
+    <<if $MacDougal_tree_5_read == false>>
+        You're staring at the observatory when Clea points out the tree from your first date
+        -> Reminisce about the tree from your first date
+            <<set $observatory_after_tree = true>>
+            <<LookAt Player MacDougal_tree_5>>
+            <<jump MacDougal_tree_5>>
+        -> Keep looking at the observatory
+            <<set $contempt+=1>>
+            You remember the meteor shower you were supposed to watch from the observatory.
+            You imagine in must have been more beautiful from up there than under the tree, where you watched it with Clea that night. Not that you told her that, obviously.
+    <<else>>
+        <<jump MacDougal_observatory_4_alt>> 
+    <<endif>>
+-> Leave
+===
+title: MacDougal_tree_5
+---
+-> Reminisce about the tree from your first date
+    <<set $MacDougal_tree_5_read = true>>
+    You: Shall we sit under that tree again?
+    Clea: God, we talked under there for so long.
+    You: Don't forget, we did start at the ice cream shop. I didn't intentionally take you on a date to a tree.
+    Clea: No but it was my favourite part.
+    You: Yeah. Talking to you was like... the easiest thing I have ever done in my life
+    Clea: Exactly. We probably could have talked all night. Why didn't we?
+    You: Bugs.
+    Clea nods sagely
+    Clea: Bugs.
+    You: But I'm glad we stayed out long enough to catch the meteor shower.
+    Clea: Oh my god, I can't believe I forgot about that! It was beautiful.
+    It WAS beautiful. Clea was beautiful too.
+    <<if $observatory_after_tree== true>>
+        -> return to looking at the observatory
+            <<LookAt Player MacDougal_observatory_4>>
+            <<jump MacDougal_observatory_4_alt>>
+    <<endif>>
+-> Leave
+===
+title: MacDougal_observatory_4_alt
+---
+You never told Clea that you were supposed to watch the meteor shower from the observatory the night of your first date.
+It hadn't seemed to matter. In that moment, you felt like you belonged under that tree with her.
+In this moment, you realize how much it still matters to you that you missed out on the observatory.
+===
+//title: Car_Scene_1
+//---
+//<<if $photo_MacDougal == 1>>
+   //INSERT DIALOGUE HOTDOG/BAD MEMORIES DIALOGUE
+    //<<if>> $photo_>>
+//===
